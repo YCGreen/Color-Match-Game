@@ -10,9 +10,12 @@ import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 import javafx.animation.Timeline;
 import javafx.util.Duration;
-
 import java.util.Random;
 
+/**
+ * HelloController - class for color matching game
+ * @author Yael Green
+ */
 
 public class HelloController {
     public Button Start;
@@ -31,7 +34,7 @@ public class HelloController {
     public ImageView wrongImg;
     public Label instructions;
     Random rand = new Random();
-    private final Color[] colors = {Color.FUCHSIA, Color.CYAN, Color.DEEPPINK, Color.GOLD, Color.SEAGREEN, Color.MEDIUMPURPLE, Color.AQUAMARINE};
+    private final Color[] colors = {Color.HOTPINK, Color.DEEPSKYBLUE, Color.DEEPPINK, Color.GOLD, Color.TURQUOISE, Color.MEDIUMPURPLE, Color.AQUAMARINE};
     private final Timeline timeline = new Timeline();
     private final Timeline imgTimeline = new Timeline();
     Button[] ButtonGroup;
@@ -39,12 +42,8 @@ public class HelloController {
     private static final int MAINLENGTH = 3;
     private static final int SHOWIMG = 1;
 
-    public HelloController() {
-
-    }
-
     @FXML
-    public void initialize() {
+    private void initialize() {
         ButtonGroup = new Button[]{color1, color2, color3, color4, color5, color6, color7, color8};
         for(Button button : ButtonGroup) {
             button.setOnMouseClicked(event -> checkColors(button));
